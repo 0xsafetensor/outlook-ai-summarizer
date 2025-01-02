@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Email Summarizer</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+
+    <!-- Template styles -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        .ms-Button {
+            margin: 10px 0;
+            width: 100%;
+        }
+        #summary {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            min-height: 100px;
+        }
+        .loading {
+            display: none;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body class="ms-font-m ms-Fabric">
+    <div class="button-container">
+        <button class="ms-Button ms-Button--primary" id="summarizeDetailed">
+            <span class="ms-Button-label">Detailed Summary</span>
+        </button>
+        <button class="ms-Button ms-Button--primary" id="summarizeBrief">
+            <span class="ms-Button-label">Brief Summary (100 words)</span>
+        </button>
+    </div>
+    
+    <div class="loading" id="loading">
+        Generating summary...
+    </div>
+
+    <main>
+        <div id="loading" style="display: none;">Loading...</div>
+        <div id="debug" style="font-family: monospace; font-size: 12px; white-space: pre-wrap; margin: 10px; padding: 10px; background: #f0f0f0;"></div>
+        <div id="summary"></div>
+    </main>
+</body>
+</html>
